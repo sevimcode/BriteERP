@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SkyViewProject_BriteERP" />
+        <module name="BriteERP" />
       </profile>
     </annotationProcessing>
   </component>
