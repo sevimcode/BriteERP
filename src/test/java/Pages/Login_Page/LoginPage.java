@@ -1,4 +1,4 @@
-package POMpages.Login_Page;
+package Pages.Login_Page;
 
 import Utilities.Config;
 import Utilities.Driver;
@@ -30,6 +30,11 @@ public class LoginPage{
 
     public WebElement errorMessage;
 
+
+
+
+
 }
+
 
 

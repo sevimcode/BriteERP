@@ -1,4 +1,4 @@
-package POMpages.CRM_Module_Pages.Pipeline_Pipeline;
+package Pages.CRM_Module_Pages.Pipeline_Pipeline;
 
 import Utilities.Driver;
 import org.openqa.selenium.WebElement;

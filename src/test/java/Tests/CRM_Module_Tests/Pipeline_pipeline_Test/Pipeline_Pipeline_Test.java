@@ -1,14 +1,11 @@
-package POMtests.CRM_Module_Tests.Pipeline_pipeline_Test;
+package Tests.CRM_Module_Tests.Pipeline_pipeline_Test;
 
-import POMpages.CRM_Module_Pages.CRM_Module_Landing_Page.CRMmoduleLandingPage;
-import POMpages.CRM_Module_Pages.Pipeline_Pipeline.PipelinePages;
-import POMpages.Home_Page.HomePage;
-import POMpages.Login_Page.LoginPage;
-import Utilities.CRMUtils;
+import Pages.CRM_Module_Pages.CRM_Module_Landing_Page.CRMmoduleLandingPage;
+import Pages.CRM_Module_Pages.Pipeline_Pipeline.PipelinePages;
+import Utilities.Config;
 import Utilities.Driver;
 import Utilities.SeleniumUtils;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -19,19 +16,14 @@ public class Pipeline_Pipeline_Test{
     PipelinePages pipelinePages =new PipelinePages();
 
 
-  @BeforeMethod
-    public void login_Navigate_to_PipeLine()
-  {
-      CRMUtils.login ();
-      SeleniumUtils.pause (2);
-      CRMUtils.navigateToModule ();
-      SeleniumUtils.pause (5);
-      crMmoduleLandingPage.PipelinePipeline.click ();
+
+    @BeforeMethod
+    public void setUp() {
+        Driver.getDriver ().get (Config.getProperty ("briteERPUrl"));
+    }
 
 
-  }
-
-  @Test (priority = 1)
+    @Test (priority = 1)
     public void  nameIsDisplayedVerification(){
       SeleniumUtils.pause (4);
       Assert.assertTrue(pipelinePages.userNameOnPage.isDisplayed());
