@@ -1,5 +1,6 @@
 package POMpages.Home_Page;
 
+import Utilities.Config;
 import Utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,11 +14,11 @@ public class HomePage{
     }
 
 
-
-
-    @FindBy(xpath = "(//span[@class='oe_menu_text'])[5]")
+    @FindBy(css = "a[data-menu='261']")
     public WebElement CRMmodule;
 
+    @FindBy (xpath ="//span[contains(text(),'EventsCRM_Manager7')])")
+    public WebElement displayedUser;
 
 
 }

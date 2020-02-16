@@ -16,16 +16,16 @@ public class LoginPage{
 
 
 
-    @FindBy(xpath = "//input[@id='login']")
+    @FindBy(name = "login")
     public WebElement usernameInput;
 
-    @FindBy (xpath = "//input[@id='password']")
+    @FindBy (name = "password")
     public WebElement passwordInput;
 
     @FindBy (xpath = "//button[@type='submit']")
     public WebElement loginButton;
 
-    @FindBy (xpath = "//*[contains(text(),'Wrong login/password')]")
+    @FindBy (xpath = "//p[contains(text(),'Wrong login/password' )]")
     public WebElement errorMessage;
 
 
