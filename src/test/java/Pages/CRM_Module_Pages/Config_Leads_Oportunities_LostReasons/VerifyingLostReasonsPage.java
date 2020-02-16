@@ -1,4 +1,4 @@
-package POMpages.CRM_Module_Pages.Config_Leads_Oportunities_LostReasons;
+package Pages.CRM_Module_Pages.Config_Leads_Oportunities_LostReasons;
 
 import Utilities.Driver;
 import org.openqa.selenium.WebElement;

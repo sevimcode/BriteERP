@@ -1,5 +1,6 @@
-package POMpages.Login_Page;
+package Pages.Login_Page;
 
+import Utilities.Config;
 import Utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,9 +27,14 @@ public class LoginPage{
     public WebElement loginButton;
 
     @FindBy (xpath = "//p[contains(text(),'Wrong login/password' )]")
+
     public WebElement errorMessage;
 
 
+
+
+
 }
+
 
 

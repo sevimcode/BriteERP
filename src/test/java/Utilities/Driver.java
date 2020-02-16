@@ -10,16 +10,16 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import java.util.concurrent.TimeUnit;
 
-
-    public class Driver{
+public class Driver{
         private static WebDriver driver;
 
-        private Driver(){ // private constructor can not instantiate again only once
+        private Driver() { // private constructor can not instantiate again only once
 
 
         }
-        public static WebDriver getDriver(){
-            if (driver==null) {
+
+        public static WebDriver getDriver() {
+            if (driver == null) {
                 switch (Config.getProperty ("browser")) {
 
                     case "chrome":
@@ -31,17 +31,17 @@ import java.util.concurrent.TimeUnit;
                         driver = new FirefoxDriver ();
                         break;
 
-                    case "opera" :
+                    case "opera":
                         WebDriverManager.operadriver ().setup ();
                         driver = new OperaDriver ();
                         break;
 
                     case "safari":
-                        if(System.getProperty("os.name").toLowerCase().contains("windows")){
+                        if (System.getProperty ("os.name").toLowerCase ().contains ("windows")) {
                             throw new WebDriverException ("Windows OS does not support safari");
                         }
-                        WebDriverManager.getInstance(SafariDriver.class).setup();
-                        driver = new SafariDriver();
+                        WebDriverManager.getInstance (SafariDriver.class).setup ();
+                        driver = new SafariDriver ();
                         break;
                 }
 
@@ -49,11 +49,10 @@ import java.util.concurrent.TimeUnit;
                 driver.manage ().timeouts ().implicitlyWait (10 , TimeUnit.SECONDS);
 
 
-
             }
             return driver;
         }
 
+
+
     }
-
-
