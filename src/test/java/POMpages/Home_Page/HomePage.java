@@ -14,43 +14,13 @@ public class HomePage{
     }
 
 
-
-
     @FindBy(css = "a[data-menu='261']")
     public WebElement CRMmodule;
 
     @FindBy (xpath ="//span[contains(text(),'EventsCRM_Manager7')])")
     public WebElement displayedUser;
 
-    @FindBy (xpath ="a[data-menu='274']")
-   public WebElement PipelinePipeline;
 
-    @FindBy (xpath ="a[data-menu='536']")
-    public WebElement PipelineQuotations;
-
-    @FindBy (xpath ="a[data-menu='279']")
-    public WebElement CustomerPipeline;
-
-    @FindBy (xpath ="a[data-menu='278']")
-    public WebElement CustomerActivities;
-
-    @FindBy (xpath ="a[data-menu='269']")
-    public WebElement CustomerSaleChannels;
-
-    @FindBy (xpath ="a[data-menu='267']")
-    public WebElement ConfigSaleChannels;
-
-    @FindBy (xpath ="a[data-menu='268']")
-    public WebElement ConfigActivitytypes;
-
-    @FindBy (xpath ="a[data-menu='263']")
-    public WebElement LeadOportunities;
-
-    @FindBy (xpath ="a[data-menu='275']")
-    public WebElement LeadOpotunitiesLeadTags;
-
-    @FindBy (xpath ="a[data-menu='276']")
-    public WebElement LeadOpotunitiesLostReasons;
 }
 
 

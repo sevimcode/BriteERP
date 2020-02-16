@@ -1,9 +1,17 @@
 package POMpages.CRM_Module_Pages.CRM_Module_Landing_Page;
 
+import Utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class CRMmoduleLandingPage{
+
+
+    public CRMmoduleLandingPage(){
+
+        PageFactory.initElements (Driver.getDriver (), this);
+    }
 
 
     @FindBy (xpath ="a[data-menu='274']")
