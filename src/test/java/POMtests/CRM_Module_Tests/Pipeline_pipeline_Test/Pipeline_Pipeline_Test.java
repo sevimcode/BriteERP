@@ -8,6 +8,7 @@ import Utilities.CRMUtils;
 import Utilities.Driver;
 import Utilities.SeleniumUtils;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -16,6 +17,7 @@ public class Pipeline_Pipeline_Test{
 
     CRMmoduleLandingPage crMmoduleLandingPage = new CRMmoduleLandingPage ();
     PipelinePages pipelinePages =new PipelinePages();
+
 
   @BeforeMethod
     public void login_Navigate_to_PipeLine()
@@ -26,12 +28,14 @@ public class Pipeline_Pipeline_Test{
       SeleniumUtils.pause (5);
       crMmoduleLandingPage.PipelinePipeline.click ();
 
+
   }
 
   @Test (priority = 1)
     public void  nameIsDisplayedVerification(){
       SeleniumUtils.pause (4);
       Assert.assertTrue(pipelinePages.userNameOnPage.isDisplayed());
+
   }
 
 
@@ -39,6 +43,7 @@ public class Pipeline_Pipeline_Test{
     public void verifyCreateButtonIsDisplayed(){
       SeleniumUtils.pause (4);
       Assert.assertTrue(pipelinePages.createButton.isDisplayed());
+
   }
 
   @Test (priority = 3)
@@ -50,12 +55,14 @@ public class Pipeline_Pipeline_Test{
       pipelinePages.createButtonWindowPage.click();
       Assert.assertTrue(pipelinePages.createdDeal.isDisplayed());
 
+
   }
 
     @Test (priority = 3)
     public void importButtonVerification(){
         SeleniumUtils.pause (4);
       Assert.assertTrue(pipelinePages.importButton.isDisplayed());
+
   }
 
 
@@ -69,7 +76,6 @@ public class Pipeline_Pipeline_Test{
     Assert.assertTrue(pipelinePages.propositionColomn.isDisplayed());
 
 
-
 }
 
 
@@ -77,6 +83,7 @@ public class Pipeline_Pipeline_Test{
     public void  serchBoxVerification(){
 
       Assert.assertTrue(pipelinePages.searchBox.isDisplayed());
+
 }
 
 
@@ -88,11 +95,13 @@ public class Pipeline_Pipeline_Test{
       Assert.assertTrue(pipelinePages.serchBoxResult.isDisplayed());
 
 
+
 }
 @Test (priority = 7)
     public void myPipelineFilterVerification(){
 
   Assert.assertTrue(pipelinePages.pipelineFilter.isDisplayed());
+
 }
 
 

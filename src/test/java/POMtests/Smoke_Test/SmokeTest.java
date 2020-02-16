@@ -10,15 +10,11 @@ import org.testng.annotations.Test;
 
 public class SmokeTest{
 
-        LoginPage loginPage = new LoginPage ();
-
-
+       LoginPage loginPage = new LoginPage ();
         @BeforeMethod
         public void setUp() {
             Driver.getDriver ().get (Config.getProperty ("briteERPUrl"));
         }
-
-
 
         @Test (priority = 1)
         public void wrongUsernameTest() {
@@ -32,7 +28,6 @@ public class SmokeTest{
 
         @Test (priority = 2)
         public void wrongPasswordTest(){
-
             loginPage.usernameInput.sendKeys(Config.getProperty ("username"));
             loginPage.passwordInput.sendKeys(Config.getProperty ("wrongPassword"));
             loginPage.loginButton.click ();
@@ -41,8 +36,7 @@ public class SmokeTest{
 
          @Test (priority = 3)
          public void loginTest() {
-
-        loginPage.usernameInput.sendKeys (Config.getProperty ("username"));
+            loginPage.usernameInput.sendKeys (Config.getProperty ("username"));
         loginPage.passwordInput.sendKeys (Config.getProperty ("password"));
         loginPage.loginButton.click ();
         Assert.assertEquals (Config.getProperty ("homepagetitle") , Driver.getDriver ().getTitle ());

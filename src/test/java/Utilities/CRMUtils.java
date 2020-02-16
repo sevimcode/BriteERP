@@ -13,7 +13,7 @@ public class CRMUtils{
 
 
     public static void login (){
-        Driver.getDriver ().get (Config.getProperty ("briteERPUrl"));
+       Driver.getDriver ().get (Config.getProperty ("briteERPUrl"));
         SeleniumUtils.pause (2);
 
         Driver.getDriver ().findElement ( By.name (usernameLocator)).sendKeys ( Config.getProperty ("username"));
