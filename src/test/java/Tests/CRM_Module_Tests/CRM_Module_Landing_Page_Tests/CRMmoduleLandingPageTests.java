@@ -77,19 +77,13 @@ public class CRMmoduleLandingPageTests{
 
     }
 
-    @Test  (priority = 10)
-    public void CRM_LostReasons_Verification() {
+//    @Test  (priority = 10)
+//    public void CRM_LostReasons_Verification() {
+//
+//        crMmoduleLandingPage.LeadOportunities.click ();
+//        Assert.assertTrue (crMmoduleLandingPage.LeadOpotunitiesLostReasons.isDisplayed () , "LeadOpotunitiesLostReasons option  is not displayed");
+//
+//    }
+//
 
-        crMmoduleLandingPage.LeadOportunities.click ();
-        Assert.assertFalse (crMmoduleLandingPage.LeadOpotunitiesLostReasons.isDisplayed () , "LeadOpotunitiesLostReasons option  is not displayed");
-
-    }
-
-
-
-
-
-
-
-
-    }
+}

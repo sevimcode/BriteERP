@@ -1,0 +1,10 @@
+<suite name = "softwaretesting">
+
+    <test name = "testng">
+
+      <classes>
+          <class name = "Tests.Login_Page_Tests.LoginPageTests"/>
+
+      </classes>
+    </test>
+</suite>
