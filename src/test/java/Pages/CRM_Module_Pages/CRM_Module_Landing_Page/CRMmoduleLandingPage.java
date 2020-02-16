@@ -42,6 +42,6 @@ public class CRMmoduleLandingPage extends HomePage{
     @FindBy (css ="a[data-menu='275']")
     public WebElement LeadOpotunitiesLeadTags;
 
-    @FindBy (css ="a[data-menu='276']")
+    @FindBy (xpath ="//span[contains(text(),'Leads & Opportunities')]//..//..//ul//li[2]//span")
     public WebElement LeadOpotunitiesLostReasons;
 }
