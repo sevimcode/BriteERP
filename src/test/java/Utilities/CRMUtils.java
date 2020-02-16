@@ -5,15 +5,16 @@ import org.openqa.selenium.Keys;
 
 public class CRMUtils{
 
-    private static String usernameLocator = "//input[@id='login']";
-    private static String passwordLocator = "//input[@id='password']";
+    private static String usernameLocator = "login";
+    private static String passwordLocator = "password";
 
 
     public static void login (){
 
-        Driver.getDriver ().findElement (By.id (usernameLocator)).sendKeys (Config.getProperty ("username"));
-        Driver.getDriver ().findElement (By.id (passwordLocator)).sendKeys (Config.getProperty ("password") + Keys.ENTER);
-        SeleniumUtils.pause (3);
+        Driver.getDriver ().findElement (By.name (usernameLocator)).sendKeys (Config.getProperty ("username"));
+
+        Driver.getDriver ().findElement (By.name (passwordLocator)).sendKeys (Config.getProperty ("password") + Keys.ENTER);
+
     }
 
     public static void navigateToModule(){

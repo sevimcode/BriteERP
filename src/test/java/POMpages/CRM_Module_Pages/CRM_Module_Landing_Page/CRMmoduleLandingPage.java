@@ -1,34 +1,18 @@
-package POMpages.Home_Page;
+package POMpages.CRM_Module_Pages.CRM_Module_Landing_Page;
 
-import Utilities.Config;
-import Utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class HomePage{
+public class CRMmoduleLandingPage{
 
-    public HomePage(){
-
-        PageFactory.initElements (Driver.getDriver (), this);
-    }
-
-
-
-
-    @FindBy(css = "a[data-menu='261']")
-    public WebElement CRMmodule;
-
-    @FindBy (xpath ="//span[contains(text(),'EventsCRM_Manager7')])")
-    public WebElement displayedUser;
 
     @FindBy (xpath ="a[data-menu='274']")
-   public WebElement PipelinePipeline;
+    public WebElement PipelinePipeline;
 
     @FindBy (xpath ="a[data-menu='536']")
     public WebElement PipelineQuotations;
 
-    @FindBy (xpath ="a[data-menu='279']")
+    @FindBy(xpath ="a[data-menu='279']")
     public WebElement CustomerPipeline;
 
     @FindBy (xpath ="a[data-menu='278']")
@@ -52,8 +36,3 @@ public class HomePage{
     @FindBy (xpath ="a[data-menu='276']")
     public WebElement LeadOpotunitiesLostReasons;
 }
-
-
-
-
-

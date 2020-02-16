@@ -23,17 +23,17 @@ public class HomePageTests{
 
 
 
-    @Test(priority = 1)
+    @Test
     public void verifyingUserNameTest() {
         CRMUtils.login ();
         Assert.assertEquals (homePage.displayedUser.getText(),Config.getProperty ("displayedUser"));
 
     }
 
-    @Test(priority = 2)
+    @Test
     public void verifyingCRMmoduleTab() {
         CRMUtils.login ();
-        Assert.assertEquals (homePage.CRMmodule.getText(),Config.getProperty ("CRMmodule"));
+        Assert.assertEquals (homePage.CRMmodule.getText (),Config.getProperty ("CRMmodule"));
 
     }
 
