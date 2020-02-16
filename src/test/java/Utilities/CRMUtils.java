@@ -10,9 +10,9 @@ public class CRMUtils{
 
 
     public static void login (){
-
-        Driver.getDriver ().findElement (By.id (usernameLocator)).sendKeys (Config.getProperty ("username"));
-        Driver.getDriver ().findElement (By.id (passwordLocator)).sendKeys (Config.getProperty ("password") + Keys.ENTER);
+        Driver.getDriver().get (Config.getProperty("briteERPUrl"));
+        Driver.getDriver ().findElement (By.xpath (usernameLocator)).sendKeys (Config.getProperty ("username"));
+        Driver.getDriver ().findElement (By.xpath (passwordLocator)).sendKeys (Config.getProperty ("password") + Keys.ENTER);
         SeleniumUtils.pause (3);
     }
 
@@ -23,7 +23,3 @@ public class CRMUtils{
 
     }
 }
-
-
-
-

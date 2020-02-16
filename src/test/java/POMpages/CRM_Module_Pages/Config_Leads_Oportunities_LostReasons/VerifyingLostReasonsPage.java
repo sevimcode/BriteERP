@@ -11,10 +11,10 @@ public class VerifyingLostReasonsPage{
             PageFactory.initElements(Driver.getDriver(), this);
         }
 
-        VerifyingLostReasonsPage verifyingLostReasonsPage = new VerifyingLostReasonsPage();
+        //VerifyingLostReasonsPage verifyingLostReasonsPage = new VerifyingLostReasonsPage();
 
-        @FindBy(xpath = "(//span[@class='oe_menu_text'])[5]")
-        public WebElement CRMBtn;
+//        @FindBy(xpath = "(//span[@class='oe_menu_text'])[5]")
+//        public WebElement CRMBtn;
 
         @FindBy(className="o_searchview_input")
         public WebElement searchInput;
@@ -27,6 +27,16 @@ public class VerifyingLostReasonsPage{
 
         @FindBy (xpath = "//ul [@class='dropdown-menu o_filters_menu']")
         public WebElement filtersDropdown;
+
+        @FindBy (xpath = "(//button [@class='o_dropdown_toggler_btn btn btn-sm dropdown-toggle'])[4]")
+        public WebElement groupByBtn;
+
+        @FindBy (xpath = "//ul[@class='dropdown-menu o_group_by_menu']")
+        public WebElement groupByDropdown;
+
+        @FindBy (xpath = "(//button [@class='o_dropdown_toggler_btn btn btn-sm dropdown-toggle'])[5]")
+        public WebElement favoritesBtn;
+
+        @FindBy (xpath = "//ul [@class='dropdown-menu o_favorites_menu']")
+        public WebElement favoritesDropdown;
     }
-
-
