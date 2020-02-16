@@ -1,7 +1,5 @@
 package POMtests.Home_Page_Tests;
-
 import POMpages.Home_Page.HomePage;
-import POMpages.Login_Page.LoginPage;
 import Utilities.CRMUtils;
 import Utilities.Config;
 import Utilities.Driver;
@@ -12,9 +10,7 @@ import org.testng.annotations.Test;
 
 public class HomePageTests{
 
-    HomePage homePage = new HomePage ();
-
-
+HomePage homePage = new HomePage ();
     @BeforeMethod
     public void setUp() {
 

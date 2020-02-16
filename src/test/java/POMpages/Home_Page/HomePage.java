@@ -8,11 +8,13 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage{
 
+
     public HomePage(){
 
         PageFactory.initElements (Driver.getDriver (), this);
     }
 
+    HomePage homePage = new HomePage ();
 
     @FindBy(css = "a[data-menu='261']")
     public WebElement CRMmodule;
@@ -20,7 +22,10 @@ public class HomePage{
     @FindBy (xpath ="//span[contains(text(),'EventsCRM_Manager7')])")
     public WebElement displayedUser;
 
+    public void navigateToModule(){
+        homePage.CRMmodule.click ();
 
+    }
 }
 
 

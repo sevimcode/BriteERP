@@ -1,4 +1,4 @@
-package POMtests.CRM_Module_Landing_Page_Tests;
+package POMtests.CRM_Module_Tests.CRM_Module_Landing_Page_Tests;
 
 import POMpages.CRM_Module_Pages.CRM_Module_Landing_Page.CRMmoduleLandingPage;
 import org.testng.Assert;

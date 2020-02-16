@@ -7,7 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class VerifyingCreateButton{
     public  VerifyingCreateButton (){
-        PageFactory.initElements(Driver.getDriver(),this);
+
+        PageFactory.initElements (Driver.getDriver (), this);
+
     }
 
     @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o-kanban-button-new']")
