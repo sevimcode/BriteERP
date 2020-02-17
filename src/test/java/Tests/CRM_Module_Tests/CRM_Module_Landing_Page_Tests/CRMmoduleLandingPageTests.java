@@ -18,7 +18,9 @@ public class CRMmoduleLandingPageTests{
     CRMmoduleLandingPage crMmoduleLandingPage = new CRMmoduleLandingPage ();
 
     @BeforeClass
-    public void setup(){ loginPageTests.LoginManager7 ();
+    public void setup(){
+
+        loginPageTests.LoginManager7 ();
         WebDriverWait wait = new WebDriverWait (Driver.getDriver (), 30);
         wait.until (ExpectedConditions.visibilityOf (homePage.CRMmodule));
         homePage.CRMmodule.click ();
@@ -77,13 +79,13 @@ public class CRMmoduleLandingPageTests{
 
     }
 
-//    @Test  (priority = 10)
-//    public void CRM_LostReasons_Verification() {
-//
-//        crMmoduleLandingPage.LeadOportunities.click ();
-//        Assert.assertTrue (crMmoduleLandingPage.LeadOpotunitiesLostReasons.isDisplayed () , "LeadOpotunitiesLostReasons option  is not displayed");
-//
-//    }
-//
+    @Test  (priority = 10)
+    public void CRM_LostReasons_Verification() {
+
+        crMmoduleLandingPage.LeadOportunities.click ();
+        Assert.assertFalse (crMmoduleLandingPage.LeadOpotunitiesLostReasons.isDisplayed () , "LeadOpotunitiesLostReasons option  is not displayed");
+
+    }
+
 
 }
