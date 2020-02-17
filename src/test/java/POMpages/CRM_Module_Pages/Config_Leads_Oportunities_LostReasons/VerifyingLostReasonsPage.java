@@ -31,7 +31,7 @@ public class VerifyingLostReasonsPage{
         @FindBy (xpath = "(//button [@class='o_dropdown_toggler_btn btn btn-sm dropdown-toggle'])[4]")
         public WebElement groupByBtn;
 
-        @FindBy (xpath = "//ul[@class='dropdown-menu o_group_by_menu']")
+        @FindBy (xpath = "(//a[@href='#'])[16]")
         public WebElement groupByDropdown;
 
         @FindBy (xpath = "(//button [@class='o_dropdown_toggler_btn btn btn-sm dropdown-toggle'])[5]")
