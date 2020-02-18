@@ -3,20 +3,13 @@ package Tests.CRM_Module_Tests.Reporting_Tests;
 import Pages.CRM_Module_Pages.Reports.Reporting;
 import Pages.Home_Page.HomePage;
 import Pages.Login_Page.LoginPage;
-import Tests.Login_Page_Tests.LoginPageTests;
 import Utilities.Config;
 import Utilities.Driver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import javax.swing.text.Utilities;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,15 +71,14 @@ public class ReportingTests {
     @Test(priority = 4)
     public void reportingPipeline_IsReportDownloadedButton() throws InterruptedException {
         reporting.reportingPipeline.click();
-
-        
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOf(reporting.pivotButton));
-
         reporting.pivotButton.click();
         reporting.downloadButton.click();
         Thread.sleep(3000);
-        Assert.assertTrue(Reporting.isFileDownloaded("/Users/dmytrochernetskyi/Downloads","table.xls"));
+        String pathToDownloadedFile = "/Users/dmytrochernetskyi/Downloads";
+        String expectedDownloadedFileName = "table.xls";
+        Assert.assertTrue(Reporting.isFileDownloaded(pathToDownloadedFile,expectedDownloadedFileName));
 
     }
 
