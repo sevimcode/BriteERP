@@ -13,17 +13,17 @@ public class HomePageTests {
     LoginPageTests loginPageTests = new LoginPageTests ();
     HomePage homePage = new HomePage ();
 
-    @BeforeClass
+    @BeforeClass (groups = "smoke")
      public void setup(){ loginPageTests.LoginManager7 ();}
 
-    @Test (priority = 1)
+    @Test (groups = "smoke")
     public void verifyingUserNameTest() {
         SeleniumUtils.pause (5);
         Assert.assertEquals (homePage.displayedUser.getText (),Config.getProperty ("displayedUser"));
 
     }
 
-    @Test (priority = 2)
+    @Test
     public void verifyingCreateButtonTest() {
         Assert.assertTrue (homePage.createButton.isDisplayed ());
 
