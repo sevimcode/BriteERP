@@ -42,12 +42,12 @@ public class CRMmoduleLandingPageTests{
         Assert.assertTrue (crMmoduleLandingPage.CustomerPipeline.isDisplayed (),"Customer-Pipeline option  is not displayed");
 
     }
-    @Test  (priority = 4)
+    @Test
     public void CRM_Customer_Activities_Verification(){
         Assert.assertTrue (crMmoduleLandingPage.CustomerPipeline.isDisplayed (),"CustomerPipeline option  is not displayed");
 
     }
-    @Test  (priority = 5)
+    @Test  (groups = { "bonding" })
     public void CRM_Customer_SaleChannels_Verification(){
         Assert.assertTrue (crMmoduleLandingPage.CustomerSaleChannels.isDisplayed (),"CustomerSaleChannels option  is not displayed");
 

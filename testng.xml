@@ -2,8 +2,14 @@
 
     <test name = "testng">
 
-      <classes>
-          <class name = "Tests.Login_Page_Tests.LoginPageTests"/>
+        <groups>
+            <run>
+                <include name="smoke" />
+            </run>
+        </groups>
+
+        <classes>
+          <class name = "Tests.Home_Page_Tests.HomePageTests"/>
 
       </classes>
     </test>
