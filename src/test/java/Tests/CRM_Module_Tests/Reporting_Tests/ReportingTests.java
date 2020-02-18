@@ -69,7 +69,7 @@ public class ReportingTests {
     }
 
     @Test(priority = 4)
-    public void reportingPipeline_IsReportDownloadedButton() throws InterruptedException {
+    public void reportingPipeline_IsReportDownloadedSuccessfully() throws InterruptedException {
         reporting.reportingPipeline.click();
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOf(reporting.pivotButton));
