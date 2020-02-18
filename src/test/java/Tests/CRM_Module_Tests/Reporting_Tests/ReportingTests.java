@@ -16,6 +16,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import javax.swing.text.Utilities;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,10 +72,24 @@ public class ReportingTests {
 
        for(int i = 0; i < expectedListOfPipelineMeasures.size(); i++) {
            Assert.assertTrue(reporting.listOfMeasures.get(i).getText().contains(expectedListOfPipelineMeasures.get(i)));
-
        }
+    }
+
+    @Test(priority = 4)
+    public void reportingPipeline_IsReportDownloadedButton() throws InterruptedException {
+        reporting.reportingPipeline.click();
+
+        
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        wait.until(ExpectedConditions.visibilityOf(reporting.pivotButton));
+
+        reporting.pivotButton.click();
+        reporting.downloadButton.click();
+        Thread.sleep(3000);
+        Assert.assertTrue(Reporting.isFileDownloaded("/Users/dmytrochernetskyi/Downloads","table.xls"));
 
     }
+
 
 
 }
