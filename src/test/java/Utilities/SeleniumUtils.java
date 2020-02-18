@@ -1,5 +1,7 @@
 package Utilities;
 
+import java.io.File;
+
 public class SeleniumUtils{
 
     public static void pause (int seconds){
@@ -12,4 +14,6 @@ public class SeleniumUtils{
 
 
     }
+
+
 }
