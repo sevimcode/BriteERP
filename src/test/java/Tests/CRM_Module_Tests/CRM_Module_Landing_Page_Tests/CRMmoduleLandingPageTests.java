@@ -3,7 +3,6 @@ package Tests.CRM_Module_Tests.CRM_Module_Landing_Page_Tests;
 import Pages.CRM_Module_Pages.CRM_Module_Landing_Page.CRMmoduleLandingPage;
 import Pages.Home_Page.HomePage;
 import Tests.Login_Page_Tests.LoginPageTests;
-import Utilities.Config;
 import Utilities.Driver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -79,13 +78,13 @@ public class CRMmoduleLandingPageTests{
 
     }
 
-    @Test  (priority = 10)
-    public void CRM_LostReasons_Verification() {
-
-        crMmoduleLandingPage.LeadOportunities.click ();
-        Assert.assertFalse (crMmoduleLandingPage.LeadOpotunitiesLostReasons.isDisplayed () , "LeadOpotunitiesLostReasons option  is not displayed");
+//    @Test  (priority = 10)
+//    public void CRM_LostReasons_Verification() {
+//
+//        crMmoduleLandingPage.LeadOportunities.click ();
+//        Assert.assertFalse (crMmoduleLandingPage.LeadOpotunitiesLostReasons.isDisplayed () , "LeadOpotunitiesLostReasons option  is not displayed");
 
     }
 
 
-}
+
