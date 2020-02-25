@@ -4,11 +4,11 @@ import Pages.CRM_Module_Pages.CRM_Module_Landing_Page.CRMmoduleLandingPage;
 import Pages.Home_Page.HomePage;
 import Tests.Login_Page_Tests.LoginPageTests;
 import Utilities.Driver;
+import Utilities.SeleniumUtils;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class CRMmoduleLandingPageTests{
 
@@ -16,67 +16,78 @@ public class CRMmoduleLandingPageTests{
     HomePage homePage = new HomePage ();
     CRMmoduleLandingPage crMmoduleLandingPage = new CRMmoduleLandingPage ();
 
-    @BeforeClass
+    @BeforeClass(groups = {"smoke"})
     public void setup(){
-
-        loginPageTests.LoginManager7 ();
+        loginPageTests.loginManager7 ();
         WebDriverWait wait = new WebDriverWait (Driver.getDriver (), 30);
         wait.until (ExpectedConditions.visibilityOf (homePage.CRMmodule));
         homePage.CRMmodule.click ();
     }
 
-    @Test (priority = 1)
+    @Test(groups = {"smoke"})
     public void CRM_Pipeline_Pipeline_Verification(){
+        SeleniumUtils.pause (5);
         Assert.assertTrue (crMmoduleLandingPage.PipelinePipeline.isDisplayed (),"Pipeline-Pipeline option is not displayed");
 
     }
 
-    @Test  (priority = 2)
+    @Test(groups = {"smoke"})
     public void CRM_Pipeline_Quotations_Verification(){
+        SeleniumUtils.pause (3);
         Assert.assertTrue (crMmoduleLandingPage.PipelineQuotations.isDisplayed (),"Pipeline-Quotations option  is not displayed");
 
     }
-    @Test  (priority = 3)
+    @Test(groups = {"smoke"})
     public void CRM_Customer_Pipeline_Verification(){
+        SeleniumUtils.pause (3);
         Assert.assertTrue (crMmoduleLandingPage.CustomerPipeline.isDisplayed (),"Customer-Pipeline option  is not displayed");
 
     }
-    @Test
+    @Test(groups = {"smoke"})
     public void CRM_Customer_Activities_Verification(){
-        Assert.assertTrue (crMmoduleLandingPage.CustomerPipeline.isDisplayed (),"CustomerPipeline option  is not displayed");
+        SeleniumUtils.pause (3);
+        Assert.assertTrue (crMmoduleLandingPage.CustomerActivities.isDisplayed (),"CustomerPipeline option  is not displayed");
 
     }
-    @Test  (groups = { "bonding" })
+    @Test(groups = {"smoke"})
     public void CRM_Customer_SaleChannels_Verification(){
+        SeleniumUtils.pause (3);
         Assert.assertTrue (crMmoduleLandingPage.CustomerSaleChannels.isDisplayed (),"CustomerSaleChannels option  is not displayed");
 
     }
 
-    @Test  (priority = 6)
+    @Test(groups = {"smoke"})
     public void CRM_Config_SaleChannels_Verification(){
+        SeleniumUtils.pause (3);
         Assert.assertTrue (crMmoduleLandingPage.ConfigSaleChannels.isDisplayed (),"ConfigSaleChannels option  is not displayed");
 
     }
 
-    @Test  (priority = 7)
+    @Test(groups = {"smoke"})
     public void CRM_Config_ActivityTypes_Verification(){
+        SeleniumUtils.pause (3);
         Assert.assertTrue (crMmoduleLandingPage.ConfigActivitytypes.isDisplayed (),"ConfigActivitytypes option  is not displayed");
 
     }
 
-    @Test  (priority = 8)
+    @Test(groups = {"smoke"})
     public void CRM_LeadsOportunities_Verification(){
+        SeleniumUtils.pause (3);
         Assert.assertTrue (crMmoduleLandingPage.LeadOportunities.isDisplayed (),"LeadOportunities option  is not displayed");
 
     }
 
-    @Test  (priority = 9)
+    @Test(groups = {"smoke"})
     public void CRM_LeadTags_Verification() {
 
+        SeleniumUtils.pause (3);
         crMmoduleLandingPage.LeadOportunities.click ();
+        SeleniumUtils.pause (2);
         Assert.assertTrue (crMmoduleLandingPage.LeadOpotunitiesLeadTags.isDisplayed () , "LeadOpotunitiesLeadTags option  is not displayed");
 
     }
+
+
 
 //    @Test  (priority = 10)
 //    public void CRM_LostReasons_Verification() {
@@ -85,6 +96,7 @@ public class CRMmoduleLandingPageTests{
 //        Assert.assertFalse (crMmoduleLandingPage.LeadOpotunitiesLostReasons.isDisplayed () , "LeadOpotunitiesLostReasons option  is not displayed");
 
     }
+
 
 
 

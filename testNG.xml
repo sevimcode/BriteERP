@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="CRM module tests" verbose="1">
+
+
+    <test name="Smoke Test" preserve-order="false" >
+        <classes>
+            <class name="Tests.Home_Page_Tests.HomePageTests"></class>
+            <class name="Tests.CRM_Module_Tests.CRM_Module_Landing_Page_Tests.CRMmoduleLandingPageTests"></class>
+            <class name="Tests.CRM_Module_Tests.Reporting_Tests.ReportingTests">
+
+            </class>
+
+
+        </classes>
+
+    </test>
+</suite>
+

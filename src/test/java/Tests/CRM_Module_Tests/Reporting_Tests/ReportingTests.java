@@ -1,10 +1,13 @@
 package Tests.CRM_Module_Tests.Reporting_Tests;
 
+import Pages.CRM_Module_Pages.CRM_Module_Landing_Page.CRMmoduleLandingPage;
 import Pages.CRM_Module_Pages.Reports.Reporting;
 import Pages.Home_Page.HomePage;
 import Pages.Login_Page.LoginPage;
+import Tests.Login_Page_Tests.LoginPageTests;
 import Utilities.Config;
 import Utilities.Driver;
+import Utilities.SeleniumUtils;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -15,41 +18,52 @@ import java.util.List;
 
 public class ReportingTests {
 
-    LoginPage loginPage = new LoginPage();
+
     Reporting reporting = new Reporting();
     HomePage homePage = new HomePage ();
+    CRMmoduleLandingPage crmmoduleLandingPage = new CRMmoduleLandingPage ();
+    LoginPageTests loginPageTests = new LoginPageTests ();
 
-    @BeforeClass
+    @BeforeClass(groups = {"smoke"})
     public void setup(){
-        Driver.getDriver().get(Config.getProperty ("briteERPUrl"));
-        Driver.getDriver ().get (Config.getProperty ("briteERPUrl"));
-        WebDriverWait wait = new WebDriverWait (Driver.getDriver (), 30);
-        wait.until (ExpectedConditions.visibilityOf (loginPage.usernameInput)).sendKeys (Config.getProperty ("username"));
-        loginPage.passwordInput.sendKeys (Config.getProperty ("password"));
-        loginPage.loginButton.click ();
-        homePage.CRMmodule.click();
+        loginPageTests.loginManager7 ();
+        WebDriverWait wait = new WebDriverWait (Driver.getDriver () , 30);
+        wait.until (ExpectedConditions.visibilityOf (homePage.CRMmodule));
+        homePage.CRMmodule.click ();
+        SeleniumUtils.pause (4);
+
+
     }
-    @Test(priority = 0)
-    public void reportingPipelineIsDisplayed(){
-        System.out.println(reporting.reportingPipeline.getText());
-        Assert.assertTrue(reporting.reportingPipeline.isDisplayed(), "Reporting Pipeline is not displayed");
+    @Test(groups = {"smoke"})
+    public void reportPipelineTitle(){
+        crmmoduleLandingPage.reportingPipeline.click ();
+        SeleniumUtils.pause (4);
+        Assert.assertEquals (Driver.getDriver ().getTitle (),"Pipeline Analysis - Odoo");
+
+    }
+    @Test(groups = {"smoke"})
+    public void reportActivitesTitle(){
+
+        crmmoduleLandingPage.reportingActivities.click ();
+        SeleniumUtils.pause (5);
+        Assert.assertEquals (Driver.getDriver ().getTitle (),"Activities Analysis - Odoo");
+
+    }
+    @Test(groups = {"smoke"})
+    public void reportSaleChannelsTitle(){
+
+        crmmoduleLandingPage.reportingSaleChannels.click ();
+        SeleniumUtils.pause (4);
+        Assert.assertEquals (Driver.getDriver ().getTitle (),"Sales Channels - Odoo");
+
     }
 
-    @Test(priority = 1)
-    public void reportingActivitiesIsDisplayed(){
-        System.out.println(reporting.reportingActivities.getText());
-        Assert.assertTrue(reporting.reportingActivities.isDisplayed(), "Reporting Activities is not displayed");
-    }
 
-    @Test(priority = 2)
-    public void reportingSalesChannelsIsDisplayed(){
-        System.out.println(reporting.reportingSaleChannels.getText());
-        Assert.assertTrue(reporting.reportingSaleChannels.isDisplayed(), "Reporting Sales Channels is not displayed");
-    }
 
-    @Test(priority = 3)
+    @Test(groups = {"smoke"})
     public void reportingPipelineMeasuresListOption_IsMatched(){
-        reporting.reportingPipeline.click();
+        SeleniumUtils.pause (3);
+        crmmoduleLandingPage.reportingPipeline.click();
         reporting.buttonMeasures.click();
 
        List<String> expectedListOfPipelineMeasures = new ArrayList<>();
@@ -68,15 +82,17 @@ public class ReportingTests {
        }
     }
 
-    @Test(priority = 4)
-    public void reportingPipeline_IsReportDownloadedSuccessfully() throws InterruptedException {
-        reporting.reportingPipeline.click();
+
+    @Test
+    public void reportingPipeline_IsReportDownloadedButton() throws InterruptedException {
+      crmmoduleLandingPage.reportingPipeline.click();
+
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOf(reporting.pivotButton));
         reporting.pivotButton.click();
         reporting.downloadButton.click();
         Thread.sleep(3000);
-        String pathToDownloadedFile = "/Users/dmytrochernetskyi/Downloads";
+        String pathToDownloadedFile = "/Users/sevim/Downloads";
         String expectedDownloadedFileName = "table.xls";
         Assert.assertTrue(Reporting.isFileDownloaded(pathToDownloadedFile,expectedDownloadedFileName));
 
