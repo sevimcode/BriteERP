@@ -82,9 +82,11 @@ public class ReportingTests {
        }
     }
 
+
     @Test
     public void reportingPipeline_IsReportDownloadedButton() throws InterruptedException {
       crmmoduleLandingPage.reportingPipeline.click();
+
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOf(reporting.pivotButton));
         reporting.pivotButton.click();
