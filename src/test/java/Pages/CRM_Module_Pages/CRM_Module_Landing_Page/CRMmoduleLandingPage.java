@@ -44,4 +44,12 @@ public class CRMmoduleLandingPage extends HomePage{
 
     @FindBy (xpath ="a[data-menu='275']")
     public WebElement LeadOpotunitiesLostReasons;
+    @FindBy (xpath = "//a[@data-menu-xmlid='crm.crm_opportunity_report_menu']")
+    public WebElement reportingPipeline;
+
+    @FindBy (xpath = "//a[@data-menu-xmlid='crm.crm_activity_report_menu']")
+    public WebElement reportingActivities;
+
+    @FindBy (xpath = "//a[@data-menu-xmlid='crm.sales_team_menu_report_crm']")
+    public WebElement reportingSaleChannels;
 }

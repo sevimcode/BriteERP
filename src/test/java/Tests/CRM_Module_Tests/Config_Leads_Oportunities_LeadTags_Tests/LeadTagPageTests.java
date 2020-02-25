@@ -15,29 +15,29 @@ import org.testng.annotations.Test;
 
 public class LeadTagPageTests{
 
-
     LoginPageTests loginPageTests = new LoginPageTests ();
     HomePage homePage = new HomePage ();
     CRMmoduleLandingPage crMmoduleLandingPage = new CRMmoduleLandingPage ();
     LeadTagPage leadTagPage = new LeadTagPage ();
 
-    @BeforeClass
+    @BeforeClass(groups = {"smoke"})
     public void setup() {
 
-        loginPageTests.LoginManager7 ();
+        loginPageTests.loginManager7 ();
         WebDriverWait wait = new WebDriverWait (Driver.getDriver () , 30);
         wait.until (ExpectedConditions.visibilityOf (homePage.CRMmodule));
         homePage.CRMmodule.click ();
         crMmoduleLandingPage.LeadOportunities.click ();
         crMmoduleLandingPage.LeadOpotunitiesLeadTags.click ();
     }
-    @Test
-    public void LeadTagPage(){
-        Assert.assertEquals (Driver.getDriver ().getTitle (),"Odoo");
+    @Test(groups = {"smoke"})
+    public void LeadTagPageTitle(){
+        SeleniumUtils.pause (5);
+        Assert.assertEquals (Driver.getDriver ().getTitle (),"Lead Tags - Odoo");
 
     }
 
-    @Test
+    @Test(groups = {"smoke"})
     public void verifyingButtons() {
 
         Assert.assertTrue (leadTagPage.createButton.isDisplayed (),"create button is not displayed");
@@ -55,7 +55,7 @@ public class LeadTagPageTests{
         leadTagPage.advanceSearchButton.click ();
       //  Assert.assertTrue (leadTagPage.filterDropDown.isDisplayed (), "filter drop down is not displayed");
     }
-    @Test (priority = 6)
+    @Test
     public void verifySerchBoxFuntionality() {
 
         WebDriverWait wait = new WebDriverWait (Driver.getDriver () , 30);
